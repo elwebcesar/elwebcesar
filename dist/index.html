@@ -2,11 +2,13 @@
 <html>  
 <head>  
     <meta charset="UTF-8">
-    <title>Cesar Fernandez - UI Designer / Front-end Web Developer / Webmaster</title>
-    <meta name="description" content="Profile Cesar Fernandez, UI Designer, Front-end Web Developer y Webmaster">
-    <meta name="keywords" content="Cesar Fernandez, UI Designer, Front-end Web Developer, Webmaster, HTML5, CSS, SASS, Javascript, JS, React, WordPress">
+    <title>Cesar Fernandez - UI Designer / Frontend Web Developer / Webmaster</title>
+    <meta name="description" content="Profile Cesar Fernandez, UI Designer, Frontend Web Developer y Webmaster">
+    <meta name="keywords" content="Cesar Fernandez, UI Designer, Frontend Web Developer, Webmaster, HTML5, CSS, SASS, Javascript, JS, React, WordPress">
     <meta name="author" content="Cesar Fernandez">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./asset/favicon.ico"/>
+    <link rel="stylesheet" href="./css/main.css">
   </head>
 
 <body>
@@ -31,11 +33,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://codepen.io/elwebcesar" title="Cesar Fernandez - elwebcesar - codepen">
-                        <img src="./asset/codepen.svg" alt="linkedin codepen">
-                    </a>
-                </li>
-                <li>
                     <a href="mailto:elwebcesar@gmail.com" title="Write me a message">
                         <img src="./asset/email.svg" alt="email ico">
                     </a>
@@ -47,14 +44,18 @@
                 </li>
             </ul>
         </nav>
-        <p>
-            <a href="#" title="Download CV, pdf format">Download CV <img src="./asset/download.svg" alt="Download CV"></a>
-        </p>
+        <aside>
+            <a href="#" title="Download CV, pdf format" class="cv">Download CV <img src="./asset/download.svg" alt="Download CV"></a>
+        </aside>
     </header>
     <main>
         <section>
-            Skill
+            <article class="skills">
+                <div id="skills" class="skills"></div>
+                <div id="projects" class="projects"></div>
+            </article>
         </section>
     </main>
+    <script src="./js/app.js" type="module"></script>
 </body>  
 </html>

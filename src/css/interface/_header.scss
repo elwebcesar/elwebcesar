@@ -1,0 +1,98 @@
+header {
+    text-align: center;
+
+    & h1 {
+        margin: 0;
+        font: {
+            size: 2.4rem;
+            weight: normal;
+        };
+    }
+
+    & p {
+        margin: .3rem 0;
+        padding: 0 100px;
+        font: {
+            size: 1.4rem;
+            weight: 600;
+        };
+        // color: $aquamarine;
+
+        background-size: 1600px 200px;
+        background: linear-gradient(to right, $aquamarine 40%, lighten($aquamarine, 35%) 50%,  $aquamarine 60%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-position: 1416px 0;
+        animation: animation-gradient-title 5s ease infinite forwards 1s;
+    }
+
+    & nav {
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0;
+            list-style: none;
+
+            & li {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+
+                & a {
+                    display: flex;
+                    opacity: .7;
+
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+
+    & a.cv {
+        position: relative;
+        display: inline-block;
+        padding: .4rem 2.4rem .4rem 1.2rem;
+        color: $white;
+        overflow: hidden;
+        border: 1px solid $white;
+        border-radius: 2rem;
+
+        & img {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            margin-top: -($height-ico-cv * .5);
+            height: $height-ico-cv;
+            @include animation(.3s);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            top: 0;
+            height: 0;
+            left: 0;
+            background: $blue;;
+            @include animation(.2s);
+        }
+
+        &:hover, &:focus {
+            // background-color: $blue;
+
+            & img {
+                animation: animate-cv-ico .5s ease .1s forwards;
+            }
+
+            &::after {
+                height: 100%;
+            }
+        }
+    }
+}
+

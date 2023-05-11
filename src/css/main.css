@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap");
+@keyframes animation-gradient-title {
+  0% {
+    background-position: 1416px 0;
+  }
+  100% {
+    background-position: 280px 0;
+  }
+}
+@keyframes animate-cv-ico {
+  0% {
+    top: 50%;
+  }
+  49.99% {
+    top: 100%;
+    margin-top: 0;
+  }
+  50% {
+    top: -6px;
+    margin-top: -9px;
+  }
+  100% {
+    top: 50%;
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font: 400 16px "Kanit", sans-serif;
+  color: #FFF;
+  background: radial-gradient(100% 100% at 50% 0%, #9647FF 0%, #6D4CFF 100%);
+}
+
+img {
+  line-height: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+header {
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: normal;
+}
+header p {
+  margin: 0.3rem 0;
+  padding: 0 100px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-size: 1600px 200px;
+  background: linear-gradient(to right, #20EA96 40%, #c3f9e3 50%, #20EA96 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: 1416px 0;
+  animation: animation-gradient-title 5s ease infinite forwards 1s;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+header nav ul li {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+header nav ul li a {
+  display: flex;
+  opacity: 0.7;
+}
+header nav ul li a:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+header a.cv {
+  position: relative;
+  display: inline-block;
+  padding: 0.4rem 2.4rem 0.4rem 1.2rem;
+  color: #FFF;
+  overflow: hidden;
+  border: 1px solid #FFF;
+  border-radius: 2rem;
+}
+header a.cv img {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  margin-top: -9px;
+  height: 18px;
+  transition: all 0.3s ease;
+}
+header a.cv::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0;
+  height: 0;
+  left: 0;
+  background: #350B76;
+  transition: all 0.2s ease;
+}
+header a.cv:hover img, header a.cv:focus img {
+  animation: animate-cv-ico 0.5s ease 0.1s forwards;
+}
+header a.cv:hover::after, header a.cv:focus::after {
+  height: 100%;
+}
+
+main {
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */

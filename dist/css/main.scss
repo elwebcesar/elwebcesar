@@ -1,0 +1,34 @@
+@import "colors","variables","mixin","animations";
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font: 400 16px 'Kanit', sans-serif;
+    color: $white;
+    background: radial-gradient(100% 100% at 50% 0%, $purple 0%, $lilac 100%);
+}
+
+img {
+    line-height: 0;
+}
+
+a {
+    text-decoration: none;
+    @include animation(.3s);
+}
+
+@import "./interface/header";
+
+
+main {
+    text-align: center;
+}

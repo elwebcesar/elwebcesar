@@ -1,0 +1,27 @@
+@keyframes animation-gradient-title {
+    0% {
+        background-position: 1416px 0;
+        // background-position: 0 1600px;
+    }
+    100% {
+        background-position: 280px 0;
+        // background-position: 100% 50%
+    }
+}
+
+@keyframes animate-cv-ico {
+    0% {
+        top: 50%;
+    }
+    49.99% {
+        top: 100%;
+        margin-top: 0;
+    }
+    50% {
+        top: -6px;
+        margin-top: -($height-ico-cv * .5);
+    }
+    100% {
+        top: 50%;
+    }
+}
