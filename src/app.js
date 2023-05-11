@@ -1,4 +1,7 @@
-import { skills, projects } from './data.js';
+// import './css/main.css';
+import './css/main.scss';
+
+import { skills, projects } from './components/data.js';
 
 const containerSkills = document.getElementById('skills');
 const containerProjects = document.getElementById('projects');

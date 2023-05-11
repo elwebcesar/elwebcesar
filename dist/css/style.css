@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap");
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/main.scss ***!
+  \************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap);
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/main.scss (1) ***!
+  \****************************************************************************************************************/
 @keyframes animation-gradient-title {
   0% {
     background-position: 1416px 0;
@@ -125,4 +131,4 @@ header a.cv:hover::after, header a.cv:focus::after {
 
 main {
   text-align: center;
-}/*# sourceMappingURL=main.css.map */
+}

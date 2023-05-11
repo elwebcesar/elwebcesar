@@ -1,0 +1,31 @@
+{
+  "name": "elwebcesar",
+  "version": "1.0.0",
+  "description": "Soy un diseñador de interfaces de usuario, desarrollador web y webmaster con más de 12 años de experiencia en la creación de sitios web modernos, accesibles y optimizados para los motores de búsqueda. Me apasiona crear experiencias en línea atractivas y efectivas para los usuarios, y me aseguro de que mi código sea semántico y fácil de mantener.",
+  "main": "webpack.config copy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elwebcesar/elwebcesar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elwebcesar/elwebcesar/issues"
+  },
+  "homepage": "https://github.com/elwebcesar/elwebcesar#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
