@@ -1,4 +1,5 @@
 node_modules/
+bk/
 .DS_Store
 webpack.config copy.js
 package copy.json

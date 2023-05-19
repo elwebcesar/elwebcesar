@@ -1,0 +1,7 @@
+@mixin animation($speed) {
+    transition: all $speed ease-in-out;
+}
+
+@mixin shadow {
+    box-shadow: 0 8px 8px rgba($violet-200, 0.2);
+}

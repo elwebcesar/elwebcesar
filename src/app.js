@@ -1,51 +1,65 @@
-// import './css/main.css';
-import './css/main.scss';
+import './sass/main.scss';
 
-import { skills, projects } from './components/data.js';
+import { skills, projects } from './components/data/data.js';
+import { elementsRemoveStyle } from './components/elementsRemoveStyle';
+import { createButtonWithImage } from './components/createButtonWithImage.js';
+import { createCardProject } from './components/createCardProject';
+import { createCardProjectSkeleton } from './components/createCardProjectSkeleton';
+import { filtering } from './components/filtering/filtering';
 
+// General selectors
 const containerSkills = document.getElementById('skills');
 const containerProjects = document.getElementById('projects');
 
+// General variables
+const routeImage = "asset";
+const timeInterval = 200;
+const dataResetFilters = 'return';
 
+
+// ------------------------------------------------------------
+// Skills
+// ------------------------------------------------------------
 skills.forEach(skill => {
-  const skillButton = document.createElement('button');
-  skillButton.textContent = skill;
-  skillButton.setAttribute('data-filter', skill);
-
-  const image = document.createElement('img');
-  image.src = `ruta/${skill.toLowerCase()}.svg`;
-
-  skillButton.appendChild(image);
-
-  containerSkills.appendChild(skillButton);
+  createButtonWithImage(skill, containerSkills, routeImage);
 });
 
-const resetButton = document.createElement('button');
-resetButton.textContent = "all";
-resetButton.setAttribute('data-filter', "all");
-containerSkills.appendChild(resetButton);
+const elements = containerSkills.querySelectorAll('button');
+setTimeout(() => {
+  elementsRemoveStyle(elements,'opacity0',timeInterval);
+}, timeInterval*4);
+
+createButtonWithImage(dataResetFilters, containerSkills, routeImage);
 
 
-projects.projects.forEach(project => {
-  const projectDiv = document.createElement('div');
-  const skills = project.skills.join(' ');
+// ------------------------------------------------------------
+// Projects
+// ------------------------------------------------------------
+createCardProjectSkeleton(projects.projects.length, containerProjects);
 
-  projectDiv.innerHTML = `
-    <h2>${project.name}</h2>
-    <img src="${project.image}" alt="${project.name}">
-    ${project.skills.map(skill => `${skill} `).join('')}
-    <ul>
-      ${project.details.map(detail => `<li>${detail}</li>`).join('')}
-    </ul>
-    <a href="${project.figma}">Figma</a>
-    <a href="${project.link}">Link</a>
-    <a href="${project.github}">GitHub</a>
-  `;
-
-  projectDiv.setAttribute('data-filter', skills.toLowerCase());
-  containerProjects.appendChild(projectDiv);
-});
+const projectsElements = createCardProject(projects);
+console.log(projectsElements);
 
 
+setTimeout(() => {
+  containerProjects.innerHTML = "";
+
+  projectsElements.forEach(element => {
+    containerProjects.appendChild(element);
+  });
+}, timeInterval*16);
 
 
+// ------------------------------------------------------------
+// Filtering
+// ------------------------------------------------------------
+const classNoDisplay = 'opacity0';
+const classActive = 'active';
+const classShow = 'show';
+const classHide = 'hide';
+
+// selectors
+const filters = containerSkills.querySelectorAll('button');
+const buttonAll = containerSkills.querySelector(`button[data-filter="${dataResetFilters}"]`);
+
+filtering(dataResetFilters, classNoDisplay, classActive, classShow, classHide, filters, buttonAll, projectsElements);

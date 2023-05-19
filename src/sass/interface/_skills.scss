@@ -1,0 +1,52 @@
+$dimension-button: 76px;
+$data-filter-reset: "return";
+
+.skills {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 2rem 0;
+
+    & button {
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+        width: $dimension-button;
+        height: $dimension-button;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: $aquamarine;
+        border: 3px solid $black;
+        border-radius: 50%;
+        @include animation(.5s);
+
+        &.opacity0 {
+            opacity: 0;
+        }
+
+        &:hover, &:focus {
+            background-color: $lemon;
+        }
+
+        &[data-filter="#{$data-filter-reset}"] {
+            position: absolute;
+            top: -$dimension-button *.3;
+            right: 0;
+            width: $dimension-button * .7;
+            height: $dimension-button * .7;
+            background-color: $gray;
+
+            &:hover, &:focus {
+                background-color: $white;
+            }
+        }
+
+        // .filters button.active:not([data-filter="all"]) {
+        //     background-color: #0073F7;
+        // }
+          
+    }
+}
