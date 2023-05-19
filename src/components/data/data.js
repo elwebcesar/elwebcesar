@@ -31,6 +31,15 @@ export const projects = {
         "github": "https://github.com/elwebcesar/Desenvolvedor-M3/tree/master/shopping-cart-cesar-fernandez",
       },
       {
+        "name": "React Access & api & typescript",
+        "image": "skeleton.png",
+        "skills": ["HTML5", "Sass", "react", "TypeScript"],
+        "details": ["HTML5", "Sass", "API REST", "React", "TypeScript"],
+        "figma": "",
+        "link": "https://react-acess-api-typescript.netlify.app/",
+        "github": "https://github.com/elwebcesar/typescript-asd",
+      },
+      {
         "name": "UNAD, Datos abiertos",
         "image": "datos.png",
         "skills": ["figma", "HTML5", "CSS", "Sass", "JS"],
@@ -40,11 +49,20 @@ export const projects = {
         "github": "https://github.com/elwebcesar/portal-datos-abiertos-unad",
       },
       {
+        "name": "unsplash api - filtering - loading",
+        "image": "colums.png",
+        "skills": ["HTML5", "CSS", "Sass", "JS"],
+        "details": [ "HTML5", "Sass", "JS", "API REST"],
+        "figma": "",
+        "link": "https://js-api-unsplash-filtering.netlify.app/",
+        "github": "https://github.com/elwebcesar/js-api-unsplash-filtering",
+      },
+      {
         "name": "Portal de Servicios, UNAD",
         "image": "servicios.png",
-        "skills": ["HTML5", "CSS", "Sass", "jQuery"],
+        "skills": ["figma", "HTML5", "CSS", "Sass", "jQuery"],
         "details": [ "HTML5", "CSS", "Bootstrap", "Sass", "jQuery" ],
-        "figma": "",
+        "figma": "https://www.figma.com/proto/W0EeSk5SXYuR6KKCnV0s1x/UNAD?type=design&node-id=1410-246&scaling=min-zoom&page-id=1410%3A2",
         "link": "https://portal-de-servicios-unad.netlify.app/",
         "github": "https://github.com/elwebcesar/portal-servicios-unad",
       },
@@ -52,7 +70,7 @@ export const projects = {
         "name": "React validated form",
         "image": "form.png",
         "skills": ["HTML5", "CSS", "React"],
-        "details": [ "HTML5", "CSS", "Sass", "React" ],
+        "details": [ "HTML5", "CSS", "React" ],
         "figma": "",
         "link": "https://react-validate-form.netlify.app",
         "github": "https://github.com/elwebcesar/react-formik-validation",
@@ -74,6 +92,15 @@ export const projects = {
         "figma": "",
         "link": "https://icr-xix.netlify.app/",
         "github": "https://github.com/elwebcesar/icr-xix",
+      },
+      {
+        "name": "Simple dashboard",
+        "image": "dashboard.png",
+        "skills": ["HTML5", "CSS", "Sass", "jQuery"],
+        "details": [ "HTML5", "CSS", "Sass", "jQuery" ],
+        "figma": "",
+        "link": "https://interface-dashboard.netlify.app/",
+        "github": "https://github.com/elwebcesar/Maquetaci-n-web-C-sar-Fern-ndez",
       }
   ]
 };
