@@ -393,6 +393,11 @@ header a.cv:hover::after, header a.cv:focus::after {
   content: "";
 }
 
+@supports (-webkit-mask-composite: source-over) {
+  .projects__info > span > span {
+    border: none;
+  }
+}
 .back-animate {
   position: fixed;
   top: 0;

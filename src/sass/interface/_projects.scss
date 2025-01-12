@@ -242,3 +242,10 @@ $project-height-image: 146px;
         }
       }
 }
+
+
+@supports (-webkit-mask-composite: source-over) {
+    .projects__info > span > span {
+        border: none;
+    }
+}
