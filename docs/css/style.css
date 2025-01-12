@@ -29,6 +29,31 @@
     top: 50%;
   }
 }
+@keyframes back-animate-loop {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(100%, 80%) rotate(180deg);
+  }
+  50% {
+    transform: translate(100%, 0%) rotate(180deg);
+  }
+  83% {
+    transform: translate(0, 90%) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+@keyframes rotate-mask {
+  from {
+    --rotation: 0deg;
+  }
+  to {
+    --rotation: 360deg;
+  }
+}
 html, body {
   padding: 0;
   min-height: 100%;
@@ -62,6 +87,8 @@ a {
 }
 
 header {
+  position: relative;
+  z-index: 2;
   text-align: center;
 }
 header h1 {
@@ -86,6 +113,7 @@ header nav ul {
   justify-content: center;
   gap: 1rem;
   padding: 0;
+  margin-bottom: 2rem;
   list-style: none;
 }
 header nav ul li {
@@ -95,9 +123,12 @@ header nav ul li {
 }
 header nav ul li a {
   display: flex;
-  opacity: 0.7;
+  opacity: 0.5;
 }
-header nav ul li a:hover {
+header nav ul li a img {
+  max-width: 30px;
+}
+header nav ul li a:hover, header nav ul li a:focus {
   opacity: 1;
   transform: scale(1.2);
 }
@@ -138,6 +169,7 @@ header a.cv:hover::after, header a.cv:focus::after {
 
 .skills {
   position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -156,13 +188,14 @@ header a.cv:hover::after, header a.cv:focus::after {
   background-color: #20EA97;
   border: 3px solid #000;
   border-radius: 50%;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .skills button.opacity0 {
   opacity: 0;
 }
 .skills button:hover, .skills button:focus {
   background-color: #CCFF39;
+  box-shadow: 0 0 1em 0.1em #FFF;
 }
 .skills button[data-filter=return] {
   position: absolute;
@@ -190,6 +223,8 @@ header a.cv:hover::after, header a.cv:focus::after {
   border-radius: 1.8rem;
 }
 .projects > div {
+  position: relative;
+  z-index: 2;
   flex-basis: 260px;
   flex-grow: 1;
   display: flex;
@@ -208,6 +243,45 @@ header a.cv:hover::after, header a.cv:focus::after {
   flex-direction: column;
   background-color: #6D38B7;
   transition: all 0.4s ease-in-out;
+}
+.projects__info > span {
+  position: absolute;
+  opacity: 0;
+  inset: -0.075em;
+  border-radius: inherit;
+  mix-blend-mode: plus-lighter;
+  filter: blur(4px);
+  z-index: 4;
+  mask: conic-gradient(from 280deg, rgba(0, 0, 0, 0), #fff 20deg 45deg, rgba(0, 0, 0, 0) 95deg), conic-gradient(from 110deg, rgba(0, 0, 0, 0), #fff 20deg, rgba(0, 0, 0, 0) 95deg);
+}
+.projects__info > span > span {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 0.2em solid #FFF;
+}
+.projects__info::before, .projects__info::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  height: 50%;
+  aspect-ratio: 1;
+  background: #FFF;
+  filter: blur(16px);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.projects__info::before {
+  top: -0.1rem;
+  left: -0.1rem;
+  inset: 0;
+  border: 0.1em solid #20EA97;
+}
+.projects__info::after {
+  bottom: 0;
+  right: 0;
+  width: 34%;
+  opacity: 0.4;
 }
 .projects__info--items, .projects__info--image > div, .projects__info--image > div span {
   position: absolute;
@@ -274,6 +348,10 @@ header a.cv:hover::after, header a.cv:focus::after {
   justify-content: center;
   gap: 1rem;
 }
+.projects__info--links a {
+  position: relative;
+  z-index: 10;
+}
 .projects__info--links a img {
   height: 26px;
   opacity: 0.7;
@@ -284,6 +362,13 @@ header a.cv:hover::after, header a.cv:focus::after {
 }
 .projects__info:hover {
   background-color: #1A043E;
+}
+.projects__info:hover::before, .projects__info:hover::after {
+  opacity: 1;
+  height: 50%;
+}
+.projects__info:hover > span {
+  opacity: 1;
 }
 .projects__info:hover .projects__info--image > div > span {
   opacity: 0.6;
@@ -306,6 +391,31 @@ header a.cv:hover::after, header a.cv:focus::after {
   background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0.15) 60%, rgba(255, 255, 255, 0));
   animation: shimmer 2s infinite;
   content: "";
+}
+
+.back-animate {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.back-animate > div {
+  --delay: 0s;
+  --size: 0.4;
+  --speed: 16s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1;
+  width: calc(150% * var(--size));
+  background: linear-gradient(259.53deg, #20EA97 8%, #F55F0A 94%);
+  filter: blur(10vw);
+  opacity: 0.6;
+  animation: back-animate-loop var(--speed) infinite linear;
+  animation-delay: var(--delay);
+  transform-origin: 50% 50%;
 }
 /*!**********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/filtering/filtering.scss ***!

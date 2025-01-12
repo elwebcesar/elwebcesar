@@ -18,6 +18,8 @@ $project-height-image: 146px;
     border-radius: 1.8rem;
 
     & > div {
+        position: relative;
+        z-index: 2;
         flex-basis: $project-width;
         flex-grow: 1;
         display: flex;
@@ -39,6 +41,62 @@ $project-height-image: 146px;
         flex-direction: column;
         background-color: $purple-100;
         @include animation(.4s);
+
+        & > span {
+            position: absolute;
+            opacity: 0;
+            inset: -0.075em;
+            border-radius: inherit;
+            mix-blend-mode: plus-lighter;
+            filter: blur(4px);
+            z-index: 4;
+            mask: conic-gradient(from 280deg, #0000, #fff 20deg 45deg, #0000 95deg),
+              conic-gradient(from 110deg, #0000, #fff 20deg, #0000 95deg);
+
+            // --rotation: 0deg; /* Variable para la rotación */
+            // mask: conic-gradient(from calc(280deg + var(--rotation)), rgba(0, 0, 0, 0), #fff 20deg 45deg, rgba(0, 0, 0, 0) 95deg), conic-gradient(from calc(110deg + var(--rotation)), rgba(0, 0, 0, 0), #fff 20deg, rgba(0, 0, 0, 0) 95deg);
+
+            // --rotation: 0deg; /* Valor inicial */
+            // mask: conic-gradient(from calc(280deg + var(--rotation)), rgba(0, 0, 0, 0), #fff 20deg 45deg, rgba(0, 0, 0, 0) 95deg),
+            //         conic-gradient(from calc(110deg + var(--rotation)), rgba(0, 0, 0, 0), #fff 20deg, rgba(0, 0, 0, 0) 95deg);
+            // animation: rotate-mask 5s linear infinite; /* Animación de 5 segundos, lineal, infinita */
+
+
+              & > span {
+                position: absolute;
+                inset: 0;
+                border-radius: inherit;
+                // filter: blur(4px);
+                border: 0.2em solid $white;
+              }
+        }
+
+        &::before, &::after {
+            position: absolute;
+            z-index: -1;
+            content: '';
+            height: 50%;
+            aspect-ratio: 1;
+            background: $white;
+            filter: blur(16px);
+            opacity: 0;
+            @include animation(.2s);
+        }
+
+        &::before {
+            top: -.1rem;
+            left: -.1rem;
+            // border-radius: 50%;
+            inset: 0;
+            border: 0.1em solid $aquamarine
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+            width: 34%;
+            opacity: .4;
+        }
 
         &--items, &--image > div, &--image > div span {
             position: absolute;
@@ -121,6 +179,8 @@ $project-height-image: 146px;
             gap: 1rem;
 
             & a {
+                position: relative;
+                z-index: 10;
                 img {
                     height: 26px;
                     opacity: .7;
@@ -137,6 +197,15 @@ $project-height-image: 146px;
 
         &:hover {
             background-color: $violet-400;
+
+            &::before, &::after {
+                opacity: 1;
+                height: 50%;
+            }
+
+            & > span {
+                opacity: 1;
+            }
         }
 
         &:hover & {

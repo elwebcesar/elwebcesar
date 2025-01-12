@@ -25,3 +25,20 @@
         top: 50%;
     }
 }
+
+@keyframes back-animate-loop {
+    0% { transform: translate(0, 0)  rotate(0deg); }
+    33% { transform: translate(100%, 80%) rotate(180deg); }
+    50% { transform: translate(100%, 0%) rotate(180deg); }
+    83% { transform: translate(0, 90%) rotate(360deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes rotate-mask {
+    from {
+      --rotation: 0deg;
+    }
+    to {
+      --rotation: 360deg;
+    }
+  }

@@ -1,4 +1,6 @@
 header {
+    position: relative;
+    z-index: 2;
     text-align: center;
 
     & h1 {
@@ -32,6 +34,7 @@ header {
             justify-content: center;
             gap: 1rem;
             padding: 0;
+            margin-bottom: 2rem;
             list-style: none;
 
             & li {
@@ -41,9 +44,13 @@ header {
 
                 & a {
                     display: flex;
-                    opacity: .7;
+                    opacity: .5;
 
-                    &:hover {
+                    & img {
+                        max-width: 30px;
+                    }
+
+                    &:hover, &:focus {
                         opacity: 1;
                         transform: scale(1.2);
                     }

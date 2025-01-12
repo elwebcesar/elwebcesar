@@ -10,7 +10,8 @@ export function createCardProject(projects, containerProjects) {
     projectDiv.setAttribute('data-filter', skills.toLowerCase());
 
     projectDiv.innerHTML = `
-      <div class="projects__info"">
+      <div class="projects__info" tabindex="0">
+      <span><span></span></span>
         <div class="projects__info--items">
           <div>
             <h3>${project.name}</h3>

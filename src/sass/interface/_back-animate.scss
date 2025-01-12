@@ -1,0 +1,32 @@
+.back-animate {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    & > div {
+        --delay: 0s;
+        --size: 0.4;
+        --speed: 16s;
+
+        position:absolute;
+        top:0;
+        left:0;
+        
+        aspect-ratio: 1;
+        width:calc( 150% * var(--size) );
+        
+        background: linear-gradient(259.53deg, $aquamarine 8%, $salmon 94%);
+        filter:blur( 10vw );
+        opacity:0.6;
+               
+        animation: back-animate-loop var(--speed) infinite linear;
+        animation-delay: var(--delay);
+        transform-origin: 50% 50%;
+        // animation: loop var(--speed) var(--delay) infinite linear; transform-origin: 50% 50%;
+    }
+}
+
+  

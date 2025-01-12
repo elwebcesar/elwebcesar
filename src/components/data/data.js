@@ -42,7 +42,7 @@ export const projects = {
     },
     {
       "name": "React Access & api & typescript",
-      "image": "skeleton.png",
+      "image": "validation.png",
       "skills": ["HTML5", "Sass", "react", "TypeScript"],
       "details": ["HTML5", "Sass", "API REST", "React", "TypeScript"],
       "figma": "",
