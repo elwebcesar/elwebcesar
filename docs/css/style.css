@@ -218,7 +218,7 @@ header a.cv:hover::after, header a.cv:focus::after {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  padding: 2rem 1rem;
+  padding: 2rem 1.2rem;
   background-color: #340A76;
   border-radius: 1.8rem;
 }
@@ -234,7 +234,7 @@ header a.cv:hover::after, header a.cv:focus::after {
 .projects__info, .projects__skeleton {
   width: 260px;
   height: 200px;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   box-shadow: 0 8px 8px rgba(35, 9, 74, 0.2);
 }
 .projects__info {

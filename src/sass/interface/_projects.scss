@@ -13,7 +13,7 @@ $project-height-image: 146px;
     flex-wrap: wrap;
     align-content: flex-start;
     // gap: 2.6rem;
-    padding: 2rem 1rem;
+    padding: 2rem 1.2rem;
     background-color: $violet;
     border-radius: 1.8rem;
 
@@ -31,7 +31,7 @@ $project-height-image: 146px;
     &__info, &__skeleton {
         width: $project-width;
         height: $project-height;
-        border-radius: 1rem;
+        border-radius: .8rem;
         @include shadow;
     }
 
